@@ -2,6 +2,7 @@ def V(s, gamma=0.99):
     V = R(s) + gamma * max_V_on_next_state(s)
     return V
 
+
 def R(s):
     if s == "happy_end":
         return 1
@@ -10,9 +11,10 @@ def R(s):
     else:
         return 0
 
+
 def max_V_on_next_state(s):
-    # If game end, expected value is 0
-    if s in ["happy_end", "bad end"]:
+    # If game end, expected value is 0.
+    if s in ["happy_end", "bad_end"]:
         return 0
 
     actions = ["up", "down"]
@@ -25,6 +27,7 @@ def max_V_on_next_state(s):
             v += prob * V(next_state)
         values.append(v)
     return max(values)
+
 
 def transit_func(s, a):
     """
@@ -53,7 +56,8 @@ def transit_func(s, a):
             next_state(s, opposite): 1 - MOVE_PROB
         }
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     print(V("state"))
     print(V("state_up_up"))
     print(V("state_down_down"))
