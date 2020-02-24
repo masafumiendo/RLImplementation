@@ -107,7 +107,7 @@ class DeepQNetworkTrainer(Trainer):
         self.training_episode = 0
         self._max_reward = -10
 
-    def train(self, env, episode_count=1000, initial_count=200, test_mode=False, render=False, observe_interval=100):
+    def train(self, env, episode_count=1200, initial_count=200, test_mode=False, render=False, observe_interval=100):
         actions = list(range(env.action_space.n))
         if not test_mode:
             agent = DeepQNetworkAgent(1.0, actions)
