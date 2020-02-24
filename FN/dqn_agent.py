@@ -167,7 +167,7 @@ def main(play, is_test):
         obs = gym.make("CartPole-v0")
         agent_class = DeepQNetworkAgentTest
     else:
-        env = gym.make("Catcher-v0)")
+        env = gym.make("Catcher-v0")
         obs = CatcherObserver(env, 80, 80, 4)
         trainer.learning_rate = 1e-4
 
