@@ -71,7 +71,7 @@ class CartPoleObserver(Observer):
 
 class ValueFunctionTrainer(Trainer):
 
-    def train(self, env, episode_count=250, epsilon=0.1, initial_count=-1, render=True):
+    def train(self, env, episode_count=250, epsilon=0.1, initial_count=-1, render=False):
         actions = list(range(env.action_space.n))
         agent = ValueFunctionAgent(epsilon, actions)
         self.train_loop(env, agent, episode_count, initial_count, render)
